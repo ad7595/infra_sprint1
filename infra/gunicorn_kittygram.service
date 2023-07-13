@@ -1,5 +1,5 @@
 [Unit]
-Description=gunicorn daemon
+Description=gunicorn kittygram daemon
 
 After=network.target
 
