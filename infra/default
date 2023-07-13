@@ -1,0 +1,81 @@
+server {
+    server_name ad7595.hopto.org;
+
+    location /api/ {
+        proxy_pass http://127.0.0.1:8000;
+    }
+
+    location /admin/ {
+        proxy_pass http://127.0.0.1:8000;
+    }
+
+    location / {
+        root   /var/www/taski;
+        index  index.html index.htm;
+        try_files $uri /index.html;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/ad7595.hopto.org/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/ad7595.hopto.org/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    if ($host = ad7595.hopto.org) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    listen 80;
+    server_name ad7595.hopto.org;
+    return 404; # managed by Certbot
+}
+
+server {
+    server_name 158.160.11.158 aadgnv.hopto.org;
+    client_max_body_size 100M;
+
+   location /media/ {
+        alias /var/www/infra_sprint1/media/;
+    }
+
+    location /api/ {
+        proxy_pass http://127.0.0.1:8080;
+    }
+
+    location /admin/ {
+        proxy_pass http://127.0.0.1:8080;
+    }
+
+    location / {
+        root /var/www/infra_sprint1/build;
+        index index.html index.htm;
+        try_files $uri /index.html;
+    }
+
+    location /uploads/ {
+        client_max_body_size 100M;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/aadgnv.hopto.org/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/aadgnv.hopto.org/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server {
+    if ($host = aadgnv.hopto.org) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    server_name 158.160.11.158 aadgnv.hopto.org;
+    return 404; # managed by Certbot
+
+
+}

@@ -1,0 +1,5 @@
+IP: 158.160.11.158;
+name_taski: https://ad7595.hopto.org/;
+name_kittygram: https://aadgnv.hopto.org/;
+login: aadgnv;
+password: 2005угурид;
