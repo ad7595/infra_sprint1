@@ -9,10 +9,11 @@
 
 `git clone git@github.com:ad7595/infra_sprint1.git
 
+или
+
+`git clone git@github.com:ad7595/taski.git
+
 `cd infra_sprint1`
-
-**Репозиторий проекта Taski** - git@github.com:ad7595/taski.git
-
 
 Создайте и активируйте вируальное окружение:
 
