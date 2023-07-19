@@ -1,7 +1,7 @@
 # Проекты 14 спринта Taski и Kittygram
 
 - **Kittygram** - https://aadgnv.hopto.org/
-- **Task** - https://ad7595.hopto.org/
+- **Taski** - https://ad7595.hopto.org/
 
 ## Установка проекта:
 
@@ -10,6 +10,8 @@
 `git clone git@github.com:ad7595/infra_sprint1.git
 
 `cd infra_sprint1`
+
+**Репозиторий проекта Taski** - git@github.com:ad7595/taski.git
 
 
 Создайте и активируйте вируальное окружение:
